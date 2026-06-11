@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
         req.session.user = {email};
 
-        return res.redirect('blog');
+        return res.redirect('/blogs/new');
     } catch (err) {
         console.log(err);
     }
