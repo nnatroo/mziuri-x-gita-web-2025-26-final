@@ -11,7 +11,7 @@ router.get('/new', requireAuth, function (req, res, next) {
     res.render('new-post', {email});
 })
 
-router.post('/create', requireAuth, async function (req, res, next) {
+router.post('/new', requireAuth, async function (req, res, next) {
     try {
         const {title, description, message} = req.body;
         const {email} = req.session.user;
