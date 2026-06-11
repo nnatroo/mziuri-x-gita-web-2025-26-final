@@ -24,7 +24,7 @@ router.post('/create', requireAuth, async function (req, res, next) {
             message,
             author: authorId,
         })
-console.log(title, description, author);
+
         await newBlog.save();
 
         res.redirect('/blogs');
