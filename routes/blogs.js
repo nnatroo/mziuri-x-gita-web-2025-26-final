@@ -5,6 +5,18 @@ const Blog = require('../models/Blog');
 const User = require('../models/User');
 const {requireAuth} = require('../middlewares/authMiddleware');
 
+router.get('/', requireAuth, async function (req, res, next) {
+    try {
+        const email = req.session.user.email;
+
+        const blogs = await Blog.find().sort({createdAt: -1}).populate('author', 'email');
+        console.log(blogs);
+        res.render('blogs', {email, blogs});
+    } catch (err) {
+        console.log(err);
+        res.status(500).send('ბლოგების წამოღებისას მოხდა შეცდომა, გთხოვთ სცადოთ თავიდან.');
+    }
+});
 
 router.get('/new', requireAuth, function (req, res, next) {
     const email = req.session.user.email;

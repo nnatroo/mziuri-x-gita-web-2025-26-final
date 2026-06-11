@@ -1,0 +1,99 @@
+.all-blogs-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.all-blogs-title {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(26, 26, 26, 1);
+}
+
+
+.all-blogs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 32px;
+    width: 100%;
+    margin: 32px auto 30px;
+}
+
+.grid-card {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.grid-card-image-wrapper {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.grid-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.blog-meta {
+    color: rgba(105, 65, 198, 1);
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.blog-card-title-arrow-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.blog-card-title-arrow-wrapper .blog-card-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 28px;
+    color: rgba(26, 26, 26, 1);
+}
+
+.blog-card-title {
+    margin-top: 0;
+}
+
+.blog-card-description {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(102, 112, 133, 1);
+}
+
+/* --- რესპონსივი მობილურებისთვის და ტაბლეტებისთვის --- */
+@media (max-width: 1024px) {
+    .all-blogs-grid {
+        grid-template-columns: repeat(2, 1fr); /* ტაბლეტზე 2 სვეტი */
+    }
+}
+
+@media (max-width: 768px) {
+    .all-blogs-grid {
+        grid-template-columns: 1fr; /* მობილურზე 1 სვეტი */
+        gap: 40px;
+    }
+
+    .all-blogs-section {
+        padding: 0 16px;
+    }
+}
