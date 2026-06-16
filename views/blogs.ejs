@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Blog | Blogs</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/blogs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+
+<%- include('partials/header',{email}) %>
+
+<section class="all-blogs-section container">
+    <h2 class="all-blogs-title">All blog posts</h2>
+
+    <div class="all-blogs-grid">
+        <% blogs.slice(4).forEach(blog => { %>
+            <article class="blog-card grid-card">
+                <div class="grid-card-image-wrapper">
+                    <img src="/images/post-image.png" alt="<%= blog.title %>" class="grid-card-image">
+                </div>
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="author"><%= blog.author.email %></span>
+                        <span class="date">• <%= blog.date.getDate() %> <%= blog.date.toLocaleString('default', {month: 'short'}) %> <%= blog.date.getFullYear() %></span>
+                    </div>
+                    <div class="blog-card-title-arrow-wrapper">
+                        <a href="/blog/<%= blog._id %>" class="blog-card-title"><%= blog.title %></a>
+                        <img class="arrow-icon" src="/images/arrow-icon.png" alt="Arrow">
+                    </div>
+                    <p class="blog-card-description"><%= blog.description %></p>
+                </div>
+            </article>
+        <% }) %>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
