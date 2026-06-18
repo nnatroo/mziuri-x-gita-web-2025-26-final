@@ -13,6 +13,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
 const blogsRouter = require('./routes/blogs');
 const blogRouter = require('./routes/blog');
 
@@ -42,6 +43,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/blogs', blogsRouter);
 app.use('/blogs', blogRouter);
 
