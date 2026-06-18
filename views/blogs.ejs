@@ -17,6 +17,76 @@
 
 <%- include('partials/header',{email}) %>
 
+<section class="blog-hero container">
+    <h1 class="blog-hero-title">THE BLOG</h1>
+</section>
+
+<% const recentBlogs = blogs.slice(0, 4); %>
+<section class="recent-blogs-section container">
+    <h2 class="recent-blogs-title">Recent blog posts</h2>
+
+    <div class="recent-grid">
+        <div>
+            <% if (recentBlogs[0]) { %>
+                <article class="featured-post blog-card">
+                    <div class="featured-image-wrapper">
+                        <img src="/images/post-image.png" alt="<%= recentBlogs[0].title %>" class="featured-image">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="author"><%= recentBlogs[0].author.email %></span>
+                            <span class="date">• <%= recentBlogs[0].date.getDate() %> <%= recentBlogs[0].date.toLocaleString('default', {month: 'short'}) %> <%= recentBlogs[0].date.getFullYear() %></span>
+                        </div>
+                        <div class="blog-card-title-arrow-wrapper">
+                            <a href="/blogs/<%= recentBlogs[0]._id %>" class="blog-card-title"><%= recentBlogs[0].title %></a>
+                            <img class="arrow-icon" src="/images/arrow-icon.png" alt="Arrow">
+                        </div>
+                        <p class="blog-card-description"><%= recentBlogs[0].description %></p>
+                    </div>
+                </article>
+            <% } %>
+        </div>
+
+        <div class="side-posts">
+            <% recentBlogs.slice(1, 3).forEach(blog => { %>
+                <article class="side-post blog-card">
+                    <div class="side-image-wrapper">
+                        <img src="/images/post-image.png" alt="<%= blog.title %>" class="side-image">
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="author"><%= blog.author.email %></span>
+                            <span class="date">• <%= blog.date.getDate() %> <%= blog.date.toLocaleString('default', {month: 'short'}) %> <%= blog.date.getFullYear() %></span>
+                        </div>
+                        <a href="/blogs/<%= blog._id %>" class="blog-card-title"><%= blog.title %></a>
+                        <p class="blog-card-description"><%= blog.description %></p>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+
+    </div>
+
+    <% if (recentBlogs[3]) { %>
+        <article class="wide-post blog-card">
+            <div class="wide-image-wrapper">
+                <img src="/images/post-image.png" alt="<%= recentBlogs[3].title %>" class="wide-image">
+            </div>
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <span class="author"><%= recentBlogs[3].author.email %></span>
+                    <span class="date">• <%= recentBlogs[3].date.getDate() %> <%= recentBlogs[3].date.toLocaleString('default', {month: 'short'}) %> <%= recentBlogs[3].date.getFullYear() %></span>
+                </div>
+                <div class="blog-card-title-arrow-wrapper">
+                    <a href="/blogs/<%= recentBlogs[3]._id %>" class="blog-card-title"><%= recentBlogs[3].title %></a>
+                    <img class="arrow-icon" src="/images/arrow-icon.png" alt="Arrow">
+                </div>
+                <p class="blog-card-description"><%= recentBlogs[3].description %></p>
+            </div>
+        </article>
+    <% } %>
+</section>
+
 <section class="all-blogs-section container">
     <h2 class="all-blogs-title">All blog posts</h2>
 
@@ -32,7 +102,7 @@
                         <span class="date">• <%= blog.date.getDate() %> <%= blog.date.toLocaleString('default', {month: 'short'}) %> <%= blog.date.getFullYear() %></span>
                     </div>
                     <div class="blog-card-title-arrow-wrapper">
-                        <a href="/blog/<%= blog._id %>" class="blog-card-title"><%= blog.title %></a>
+                        <a href="/blogs/<%= blog._id %>" class="blog-card-title"><%= blog.title %></a>
                         <img class="arrow-icon" src="/images/arrow-icon.png" alt="Arrow">
                     </div>
                     <p class="blog-card-description"><%= blog.description %></p>
