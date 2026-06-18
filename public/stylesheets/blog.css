@@ -88,6 +88,7 @@
     max-height: 550px;
     object-fit: cover;
     border-radius: 4px;
+    margin-bottom: 32px;
 }
 
 .single-article-body {

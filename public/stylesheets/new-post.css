@@ -66,11 +66,11 @@ body[data-theme="dark"] {
     border-radius: 2px;
     border: 1px solid rgba(109, 110, 118, 0.5);
     outline: none;
-    font-family: Inter;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: rgba(35, 37, 54, 1);
+    resize: none;
 }
 
 .new-post-form input::placeholder,
@@ -82,9 +82,24 @@ body[data-theme="dark"] {
     color: rgba(35, 37, 54, 1);
 }
 
+.thumbnail-label {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: rgba(35, 37, 54, 1);
+    margin-bottom: -24px;
+}
+
 #blog-image{
-    border: none;
-    padding: 0;
+    border: 1px solid rgba(109, 110, 118, 0.5);
+    border-radius: 2px;
+    padding: 16px 24px;
+    cursor: pointer;
+}
+
+body[data-theme="dark"] .thumbnail-label {
+    color: rgba(255, 255, 255, 1);
 }
 
 .new-post-form button {

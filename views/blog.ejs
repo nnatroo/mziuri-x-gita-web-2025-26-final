@@ -24,7 +24,7 @@
         <div class="sidebar-grid">
             <% recentBlogs.forEach(item => { %>
                 <article class="sidebar-blog-card">
-                    <img src="<%= item.imageUrl %>" alt="<%= item.title %>" class="sidebar-card-img">
+                    <img src="<%= item.imageUrl || '/images/post-image.png' %>" alt="<%= item.title %>" class="sidebar-card-img">
                     <div class="sidebar-card-content">
                         <span class="blog-meta">
                             <span class="author"><%= item.author.email %></span>
@@ -45,6 +45,8 @@
         </span>
 
         <h1 class="single-article-title"><%= blog.title %></h1>
+
+        <img src="<%= blog.imageUrl || '/images/post-image.png' %>" alt="<%= blog.title %>" class="single-article-img">
 
         <div class="single-article-body">
             <p><%= blog.message %></p>

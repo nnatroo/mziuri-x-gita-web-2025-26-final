@@ -30,7 +30,7 @@
             <% if (recentBlogs[0]) { %>
                 <article class="featured-post blog-card">
                     <div class="featured-image-wrapper">
-                        <img src="/images/post-image.png" alt="<%= recentBlogs[0].title %>" class="featured-image">
+                        <img src="<%= recentBlogs[0].imageUrl || '/images/post-image.png' %>" alt="<%= recentBlogs[0].title %>" class="featured-image">
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -51,7 +51,7 @@
             <% recentBlogs.slice(1, 3).forEach(blog => { %>
                 <article class="side-post blog-card">
                     <div class="side-image-wrapper">
-                        <img src="/images/post-image.png" alt="<%= blog.title %>" class="side-image">
+                        <img src="<%= blog.imageUrl || '/images/post-image.png' %>" alt="<%= blog.title %>" class="side-image">
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
@@ -70,7 +70,7 @@
     <% if (recentBlogs[3]) { %>
         <article class="wide-post blog-card">
             <div class="wide-image-wrapper">
-                <img src="/images/post-image.png" alt="<%= recentBlogs[3].title %>" class="wide-image">
+                <img src="<%= recentBlogs[3].imageUrl || '/images/post-image.png' %>" alt="<%= recentBlogs[3].title %>" class="wide-image">
             </div>
             <div class="blog-card-content">
                 <div class="blog-meta">
@@ -94,7 +94,7 @@
         <% blogs.slice(4).forEach(blog => { %>
             <article class="blog-card grid-card">
                 <div class="grid-card-image-wrapper">
-                    <img src="/images/post-image.png" alt="<%= blog.title %>" class="grid-card-image">
+                    <img src="<%= blog.imageUrl || '/images/post-image.png' %>" alt="<%= blog.title %>" class="grid-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-meta">

@@ -20,6 +20,11 @@ const blogSchema = new Schema({
         maxlength: 5000,
         required: true
     },
+    imageUrl: {
+        type: String,
+        trim: true,
+        default: '/images/post-image.png'
+    },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',

@@ -4,6 +4,7 @@ const path = require('path');
 const Blog = require('../models/Blog');
 const User = require('../models/User');
 const {requireAuth} = require('../middlewares/authMiddleware');
+const upload = require('../middlewares/upload');
 
 router.get('/', requireAuth, async function (req, res, next) {
     try {
@@ -23,19 +24,25 @@ router.get('/new', requireAuth, function (req, res, next) {
     res.render('new-post', {email});
 })
 
-router.post('/new', requireAuth, async function (req, res, next) {
+router.post('/new', requireAuth, upload.single('thumbnail'), async function (req, res, next) {
     try {
         const {title, description, message} = req.body;
         const {email} = req.session.user;
         const author = await User.findOne({email}, 'email');
         const authorId = author._id.toString();
 
-        const newBlog = new Blog({
+        const blogData = {
             title,
             description,
             message,
             author: authorId,
-        })
+        };
+
+        if (req.file) {
+            blogData.imageUrl = '/images/uploads/' + req.file.filename;
+        }
+
+        const newBlog = new Blog(blogData);
 
         await newBlog.save();
 
