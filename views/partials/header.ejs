@@ -22,5 +22,28 @@
             </li>
             <% } %>
         </ul>
+
+        <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" type="button" aria-label="Close menu">
+            <span></span>
+            <span></span>
+        </button>
+        <a href="/">Blog</a>
+        <a href="/projects">Projects</a>
+        <a href="/about">About</a>
+        <a href="/newsletter">Newsletter</a>
+        <% if(email){ %>
+        <a href="/blogs/new-post">New Post</a>
+        <a href="/logout">Log Out</a>
+        <% } %>
+    </div>
 </header>
+
+<script src="/javascripts/header.js"></script>
