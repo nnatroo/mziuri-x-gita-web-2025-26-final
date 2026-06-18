@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Blog | Blogs</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <link rel="stylesheet" href="/stylesheets/blogs.css">
+    <link rel="stylesheet" href="/stylesheets/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sen:wght@400..800&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<%- include('partials/header',{email}) %>
+
+<main class="single-blog-container container">
+
+    <aside class="sidebar-recent-posts">
+        <h2 class="sidebar-heading">Recent blog posts</h2>
+        <div class="sidebar-grid">
+            <% recentBlogs.forEach(item => { %>
+                <article class="sidebar-blog-card">
+                    <img src="<%= item.imageUrl %>" alt="<%= item.title %>" class="sidebar-card-img">
+                    <div class="sidebar-card-content">
+                        <span class="blog-meta">
+                            <span class="author"><%= item.author.email %></span>
+                            • <%= item.date.getDate() %> <%= item.date.toLocaleString('default', {month: 'short'}) %> <%= item.date.getFullYear() %>
+                        </span>
+                        <a href="/blog/<%= item._id %>" class="sidebar-card-title"><%= item.title %></a>
+                        <p class="sidebar-card-description"><%= item.description %></p>
+                    </div>
+                </article>
+            <% }) %>
+        </div>
+    </aside>
+
+    <section class="main-blog-article">
+        <span class="blog-meta">
+            <span class="author"><%= blog.author.email %></span>
+            • <%= blog.date.getDate() %> <%= blog.date.toLocaleString('default', {month: 'short'}) %> <%= blog.date.getFullYear() %>
+        </span>
+
+        <h1 class="single-article-title"><%= blog.title %></h1>
+
+        <div class="single-article-body">
+            <p><%= blog.message %></p>
+        </div>
+
+        <div class="inner-newsletter-box">
+            <span class="news-tag">Newsletters</span>
+            <h2>Stories and interviews</h2>
+            <p class="news-text">Subscribe to learn about new product features, the latest in technology, solutions, and updates.</p>
+            <div  class ="news-form-link-wrapper">
+                <form id="news-inline-form">
+                    <input id="news-email-input" type="email" placeholder="Enter your email" required>
+                    <button id="submit-btn" type="submit">Subscribe</button>
+                </form>
+                <p class="news-privacy">We care about your data in our <a href="#">privacy policy</a></p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+
+<%- include('partials/footer') %>
+
+<script src="/javascripts/blog.js"></script>
+
+</body>
+</html>

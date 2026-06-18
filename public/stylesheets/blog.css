@@ -1,0 +1,214 @@
+.single-blog-container {
+    max-width: 1440px;
+    margin: 50px auto;
+    display: flex;
+    gap: 64px;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+.sidebar-recent-posts {
+    flex: 1;
+    max-width: 380px;
+}
+
+.sidebar-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+}
+
+.sidebar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.sidebar-card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.blog-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6941C6;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.sidebar-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1A1A1A;
+    text-decoration: none;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.sidebar-card-title:hover {
+    color: #6941C6;
+}
+
+.sidebar-card-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #667085;
+}
+
+.main-blog-article {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.single-article-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+}
+
+.single-article-img-wrap {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.single-article-img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.single-article-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: #1A1A1A;
+}
+
+.inner-newsletter-box {
+    padding: 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 768px;
+}
+
+.news-tag {
+    color: rgba(127, 86, 217, 1);
+    margin-bottom: 12px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.inner-newsletter-box h2 {
+    margin-bottom: 24px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.news-text {
+    color: rgba(102, 112, 133, 1);
+    margin-bottom: 40px;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.news-form-link-wrapper {
+    width: fit-content;
+}
+
+#news-inline-form {
+    display: flex;
+    gap: 16px;
+    width: 494px;
+    margin: 0 auto 16px auto;
+}
+
+#news-email-input {
+    flex: 1;
+    padding-top: 12px;
+    padding-right: 14px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(102, 112, 133, 1);
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+}
+
+#submit-btn {
+    padding: 12px 24px;
+    background-color: rgba(127, 86, 217, 1);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#submit-btn:hover {
+    background-color: rgba(127, 86, 217, 0.8);
+}
+
+.news-privacy {
+    color: rgba(102, 112, 133, 1);
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.news-privacy a {
+    color: rgba(102, 112, 133, 1);
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-offset: 0%;
+    text-decoration-thickness: 0%;
+}
+
+@media (max-width: 1024px) {
+    .single-blog-container {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .sidebar-recent-posts {
+        max-width: 100%;
+        width: 100%;
+    }
+}
